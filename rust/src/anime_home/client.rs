@@ -76,6 +76,7 @@ impl Client {
         Self {
             agent: reqwest::ClientBuilder::new()
                 .user_agent("Android,DMZJ,10;")
+                .danger_accept_invalid_certs(true)
                 .build()
                 .unwrap(),
             user_ticket: RwLock::new((String::default(), String::default())),
